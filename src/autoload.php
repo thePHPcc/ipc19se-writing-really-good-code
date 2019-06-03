@@ -7,8 +7,11 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
+                'clansofcaledonia\\bread' => '/Bread.php',
+                'clansofcaledonia\\cheese' => '/Cheese.php',
                 'clansofcaledonia\\exception' => '/Exception.php',
                 'clansofcaledonia\\good' => '/Good.php',
+                'clansofcaledonia\\grain' => '/Grain.php',
                 'clansofcaledonia\\market' => '/Market.php',
                 'clansofcaledonia\\milk' => '/Milk.php',
                 'clansofcaledonia\\offer' => '/Offer.php',
@@ -16,7 +19,9 @@ spl_autoload_register(
                 'clansofcaledonia\\pound' => '/Pound.php',
                 'clansofcaledonia\\pricelist' => '/PriceList.php',
                 'clansofcaledonia\\pricelistbuilder' => '/PriceListBuilder.php',
-                'clansofcaledonia\\unit' => '/Unit.php'
+                'clansofcaledonia\\unit' => '/Unit.php',
+                'clansofcaledonia\\whisky' => '/Whisky.php',
+                'clansofcaledonia\\wool' => '/Wool.php'
             );
         }
         $cn = strtolower($class);

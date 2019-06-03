@@ -30,4 +30,16 @@ final class PriceList
     {
         return $this->prices[$this->position];
     }
+
+    public function decrement(int $steps = 1)
+    {
+        $this->position -= $steps;
+        return $this->position;
+    }
+
+    public function increment(int $steps = 1)
+    {
+        $this->position += $steps;
+        return $this->position;
+    }
 }
