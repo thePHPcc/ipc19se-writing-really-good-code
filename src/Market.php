@@ -3,7 +3,7 @@ namespace ClansOfCaledonia;
 
 final class Market
 {
-    public function priceFor(Good $milk): Pound
+    public function priceFor(Good $good): Pound
     {
         return new Pound(5);
     }
