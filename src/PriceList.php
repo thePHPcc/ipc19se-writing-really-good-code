@@ -36,4 +36,10 @@ final class PriceList
     {
         $this->position = max($this->position - $unit->amount(), 0);
     }
+
+
+    public function decreaseStock(Unit $unit): void
+    {
+        $this->position = min($this->position + $unit->amount(), count($this->prices)-1);
+    }
 }
