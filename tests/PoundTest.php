@@ -3,6 +3,9 @@ namespace ClansOfCaledonia;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @covers \ClansOfCaledonia\Pound
+ */
 final class PoundTest extends TestCase
 {
     public function testHasAmount(): void
