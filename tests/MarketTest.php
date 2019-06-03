@@ -59,7 +59,7 @@ final class MarketTest extends TestCase
             )
         );
 
-        $this->assertEquals(new Pound(3), $payment);
+        $this->assertEquals(new Pound(4), $payment);
 
         return $market;
     }
@@ -77,7 +77,7 @@ final class MarketTest extends TestCase
     {
         return [
             'initialMilkCosts5Pound' => [Good::milk(), 5],
-            'initialWoolCosts3Pound' => [Good::wool(), 3],
+            'initialWoolCosts4Pound' => [Good::wool(), 4],
         ];
     }
 }

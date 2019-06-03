@@ -8,19 +8,20 @@ final class Market
 
     public function __construct()
     {
-        $this->priceLists['milk'] = PriceListBuilder::milkPrices();
+        $this->priceLists[Milk::class] = PriceListBuilder::milkPrices();
+        $this->priceLists[Wool::class] = PriceListBuilder::woolPrices();
     }
 
 
     public function priceFor(Good $good): Pound
     {
-        return $this->priceLists['milk']->current();
+        return $this->priceLists[get_class($good)]->current();
     }
 
     public function sellTo(Offer $offer): Pound
     {
-        $profit = $this->priceLists['milk']->current()->multiply($offer->amount());
-        $this->priceLists['milk']->increaseStock($offer->amount());
+        $profit = $this->priceLists[get_class($offer->good())]->current()->multiply($offer->amount());
+        $this->priceLists[get_class($offer->good())]->increaseStock($offer->amount());
         return $profit;
     }
 }
