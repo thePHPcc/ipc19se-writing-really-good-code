@@ -7,6 +7,9 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
+                'clansofcaledonia\\good' => '/Good.php',
+                'clansofcaledonia\\market' => '/Market.php',
+                'clansofcaledonia\\milk' => '/Milk.php',
                 'clansofcaledonia\\pound' => '/Pound.php'
             );
         }
