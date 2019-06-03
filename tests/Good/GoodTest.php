@@ -2,6 +2,7 @@
 
 namespace ClansOfCaledonia\Good;
 
+use ClansOfCaledonia\Good;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,5 +16,12 @@ final class GoodTest extends TestCase
         $milk = Good::milk();
 
         $this->assertTrue($milk->isMilk());
+    }
+
+    public function testCanNotBeMilk(): void
+    {
+        $grain = Good::grain();
+
+        $this->assertFalse($grain->isMilk());
     }
 }

@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace ClansOfCaledonia;
 
 use PHPUnit\Framework\TestCase;
@@ -6,13 +7,14 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \ClansOfCaledonia\PriceList
  *
- * @uses \ClansOfCaledonia\Pound
+ * @uses   \ClansOfCaledonia\Pound
  */
 final class PriceListTest extends TestCase
 {
     public function testHasInitialPrice(): void
     {
         $prices = PriceList::fromList(
+            $initPosition = 1,
             new Pound(1),
             new Pound(2),
             new Pound(3),
@@ -25,6 +27,6 @@ final class PriceListTest extends TestCase
             new Pound(10)
         );
 
-        $this->assertEquals(new Pound(4), $prices->current());
+        $this->assertEquals(new Pound(2), $prices->current());
     }
 }

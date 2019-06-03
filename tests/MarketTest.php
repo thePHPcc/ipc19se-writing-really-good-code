@@ -34,7 +34,7 @@ final class MarketTest extends TestCase
             );
     }
 
-    public function testMilkCosts5PoundsInitially(): void
+    public function testInitialPoundsFromInitPosition(): void
     {
         $this->assertEquals(new Pound(10), $this->market->priceFor(Good::milk()));
     }

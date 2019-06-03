@@ -9,7 +9,9 @@ spl_autoload_register(
             $classes = array(
                 'clansofcaledonia\\exception' => '/Exception.php',
                 'clansofcaledonia\\good' => '/Good.php',
+                'clansofcaledonia\\good\\grain' => '/Good/Grain.php',
                 'clansofcaledonia\\good\\milk' => '/Good/Milk.php',
+                'clansofcaledonia\\good\\wool' => '/Good/Wool.php',
                 'clansofcaledonia\\market' => '/Market.php',
                 'clansofcaledonia\\offer' => '/Offer.php',
                 'clansofcaledonia\\outofrangeexception' => '/OutOfRangeException.php',
