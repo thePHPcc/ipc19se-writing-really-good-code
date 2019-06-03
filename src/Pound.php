@@ -17,4 +17,9 @@ final class Pound
     {
         return $this->amount;
     }
+
+    public function mult(int $multiplier): Pound
+    {
+        return new Pound($this->amount * $multiplier);
+    }
 }

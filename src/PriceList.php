@@ -30,4 +30,25 @@ final class PriceList
     {
         return $this->prices[$this->position];
     }
+
+    public function move(int $positions): Pound
+    {
+        $nextPosition = $this->position + $positions;
+
+        if ($nextPosition >= count($this->prices)) {
+            $this->position = count($this->prices) - 1;
+
+            return $this->current();
+        }
+
+        if ($nextPosition < 0) {
+            $this->position = 0;
+
+            return $this->current();
+        }
+
+        $this->position = $nextPosition;
+
+        return $this->current();
+    }
 }

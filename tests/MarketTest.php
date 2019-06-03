@@ -10,24 +10,41 @@ use PHPUnit\Framework\TestCase;
  * @uses \ClansOfCaledonia\Good
  * @uses \ClansOfCaledonia\Offer
  * @uses \ClansOfCaledonia\Unit
+ * @uses \ClansOfCaledonia\PriceList
+ * @uses \ClansOfCaledonia\PriceListCollection
+ * @uses \ClansOfCaledonia\PriceListBuilder
  */
 final class MarketTest extends TestCase
 {
     public function testMilkCosts5PoundsInitially(): void
     {
-        $market = new Market;
+        $milk = new Milk();
+        $priceListBuilder = new PriceListBuilder();
+        $milkPrices = $priceListBuilder->milkPrices();
 
-        $this->assertEquals(new Pound(5), $market->priceFor(Good::milk()));
+        $priceListCollection = new PriceListCollection();
+        $priceListCollection->registerPriceListForGood($milk, $milkPrices);
+
+        $market = new Market($priceListCollection);
+
+        $this->assertEquals(new Pound(5), $market->priceFor($milk));
     }
 
     public function testMilkCanBeSoldToTheMarket(): Market
     {
-        $market = new Market;
+        $milk = new Milk();
+        $priceListBuilder = new PriceListBuilder();
+        $milkPrices = $priceListBuilder->milkPrices();
+
+        $priceListCollection = new PriceListCollection();
+        $priceListCollection->registerPriceListForGood($milk, $milkPrices);
+
+        $market = new Market($priceListCollection);
 
         $payment = $market->sellTo(
             new Offer(
                 new Unit(2),
-                Good::milk()
+                $milk
             )
         );
 
@@ -36,11 +53,45 @@ final class MarketTest extends TestCase
         return $market;
     }
 
-    /**
-     * @depends testMilkCanBeSoldToTheMarket
-     */
-    public function testSellingMilkToTheMarketReducesMilkPrice(Market $market): void
+    public function testSellingMilkToTheMarketReducesMilkPrice(): void
     {
-        $this->assertEquals(new Pound(4), $market->priceFor(Good::milk()));
+        $milk = new Milk();
+        $priceListBuilder = new PriceListBuilder();
+        $milkPrices = $priceListBuilder->milkPrices();
+
+        $priceListCollection = new PriceListCollection();
+        $priceListCollection->registerPriceListForGood($milk, $milkPrices);
+
+        $market = new Market($priceListCollection);
+
+        $offer = new Offer(
+            new Unit(3),
+            $milk
+        );
+
+        $market->sellTo($offer);
+
+        $this->assertEquals(new Pound(3), $milkPrices->current());
+    }
+
+    public function testBuyingMilkFromTheMarketIncresesMilkPrice(): void
+    {
+        $milk = new Milk();
+        $priceListBuilder = new PriceListBuilder();
+        $milkPrices = $priceListBuilder->milkPrices();
+
+        $priceListCollection = new PriceListCollection();
+        $priceListCollection->registerPriceListForGood($milk, $milkPrices);
+
+        $market = new Market($priceListCollection);
+
+        $offer = new Offer(
+            new Unit(3),
+            $milk
+        );
+
+        $market->buyFrom($offer);
+
+        $this->assertEquals(new Pound(7), $milkPrices->current());
     }
 }

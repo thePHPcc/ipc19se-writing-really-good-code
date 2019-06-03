@@ -16,4 +16,14 @@ final class PoundTest extends TestCase
 
         $this->assertSame($amount, $p->amount());
     }
+
+    public function testMultiply(): void
+    {
+        $amount = 100;
+
+        $p = new Pound($amount);
+        $newPound = $p->mult(5);
+
+        $this->assertSame(500, $newPound->amount());
+    }
 }

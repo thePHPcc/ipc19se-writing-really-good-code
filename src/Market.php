@@ -3,16 +3,38 @@ namespace ClansOfCaledonia;
 
 final class Market
 {
-    public function priceFor(Good $milk): Pound
+    /** @var PriceListCollection */
+    private $priceListCollection;
+
+    public function __construct(PriceListCollection $priceListCollection)
     {
-        return new Pound(5);
+        $this->priceListCollection = $priceListCollection;
+    }
+
+    public function priceFor(Good $good): Pound
+    {
+        return $this->priceListCollection->currentFor($good);
     }
 
     public function sellTo(Offer $offer): Pound
     {
-        return new Pound(
-            $offer->amount()->amount() *
-            $this->priceFor($offer->good())->amount()
-        );
+        $cost = $this
+            ->priceFor($offer->good())
+            ->mult($offer->amount()->amount());
+
+        $this->priceListCollection->moveFor($offer->good(), -$offer->amount()->amount());
+
+        return $cost;
+    }
+
+    public function buyFrom(Offer $offer): Pound
+    {
+        $cost = $this
+            ->priceFor($offer->good())
+            ->mult($offer->amount()->amount());
+
+        $this->priceListCollection->moveFor($offer->good(), $offer->amount()->amount());
+
+        return $cost;
     }
 }
