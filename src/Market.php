@@ -4,7 +4,7 @@ namespace ClansOfCaledonia;
 
 final class Market
 {
-    /** @var array[string:PriceList] */
+    /** @var array<string,PriceList> */
     private $prices;
 
     public function __construct()
@@ -28,10 +28,10 @@ final class Market
     {
         $good = $offer->good();
         $unit = $offer->amount();
-        $result = $this->priceFor($good)->multiply($unit->amount());
+        $payment = $this->priceFor($good)->multiply($unit->amount());
         $this->adjustPrice($good, $unit);
 
-        return $result;
+        return $payment;
     }
 
     private function adjustPrice(Good $good, Unit $unit)

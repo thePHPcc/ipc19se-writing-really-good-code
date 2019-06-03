@@ -34,4 +34,20 @@ final class PoundTest extends TestCase
             [3, 2, 6],
         ];
     }
+    /**
+     * @dataProvider minusNumbers
+     */
+    public function testCanBeMinusByANumber(int $init, int $factor, int $result): void
+    {
+        $this->assertEquals(new Pound($result), (new Pound($init))->minus($factor));
+    }
+
+    public function minusNumbers(): array
+    {
+        return [
+            [2, 2, 0],
+            [2, 5, -3],
+            [3, 2, 1],
+        ];
+    }
 }

@@ -29,7 +29,7 @@ final class MarketTest extends TestCase
                     new Pound(20),
                     new Pound(30),
                     new Pound(40),
-                    new Pound(50),
+                    new Pound(50)
                 )
             );
     }

@@ -15,6 +15,7 @@ spl_autoload_register(
                 'clansofcaledonia\\market' => '/Market.php',
                 'clansofcaledonia\\offer' => '/Offer.php',
                 'clansofcaledonia\\outofrangeexception' => '/OutOfRangeException.php',
+                'clansofcaledonia\\player' => '/Player.php',
                 'clansofcaledonia\\pound' => '/Pound.php',
                 'clansofcaledonia\\pricelist' => '/PriceList.php',
                 'clansofcaledonia\\pricelistbuilder' => '/PriceListBuilder.php',

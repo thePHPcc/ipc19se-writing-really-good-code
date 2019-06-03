@@ -23,4 +23,9 @@ final class Pound
     {
         return new Pound($this->amount * $factor);
     }
+
+    public function minus(int $number): Pound
+    {
+        return new Pound($this->amount - $number);
+    }
 }
