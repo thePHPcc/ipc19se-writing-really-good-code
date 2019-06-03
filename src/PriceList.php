@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace ClansOfCaledonia;
 
 final class PriceList
@@ -29,5 +30,19 @@ final class PriceList
     public function current(): Pound
     {
         return $this->prices[$this->position];
+    }
+
+    public function up()
+    {
+        if (\count($this->prices) !== $this->position + 1) {
+            $this->position++;
+        }
+    }
+
+    public function down()
+    {
+        if (-1 !== $this->position - 1) {
+            $this->position--;
+        }
     }
 }

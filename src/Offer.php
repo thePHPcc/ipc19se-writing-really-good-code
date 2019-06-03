@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace ClansOfCaledonia;
 
 final class Offer
@@ -15,8 +16,8 @@ final class Offer
 
     public function __construct(Quantity $unit, Good $good)
     {
-        $this->amount = $unit;
-        $this->good   = $good;
+        $this->amount       = $unit;
+        $this->good         = $good;
     }
 
     public function amount(): Quantity
