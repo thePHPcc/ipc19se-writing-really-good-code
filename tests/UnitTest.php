@@ -30,8 +30,8 @@ final class UnitTest extends TestCase
         return [
             [
                 0,
-                -1
-            ]
+                -1,
+            ],
         ];
     }
 }

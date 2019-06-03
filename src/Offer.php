@@ -16,7 +16,7 @@ final class Offer
     public function __construct(Unit $unit, Good $good)
     {
         $this->amount = $unit;
-        $this->good = $good;
+        $this->good   = $good;
     }
 
     public function amount(): Unit

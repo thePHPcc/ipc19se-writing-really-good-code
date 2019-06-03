@@ -11,8 +11,10 @@ spl_autoload_register(
                 'clansofcaledonia\\good' => '/Good.php',
                 'clansofcaledonia\\market' => '/Market.php',
                 'clansofcaledonia\\milk' => '/Milk.php',
+                'clansofcaledonia\\offer' => '/Offer.php',
                 'clansofcaledonia\\outofrangeexception' => '/OutOfRangeException.php',
                 'clansofcaledonia\\pound' => '/Pound.php',
+                'clansofcaledonia\\pricelist' => '/PriceList.php',
                 'clansofcaledonia\\unit' => '/Unit.php'
             );
         }
