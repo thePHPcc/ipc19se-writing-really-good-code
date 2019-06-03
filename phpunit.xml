@@ -8,6 +8,7 @@
          beStrictAboutOutputDuringTests="true"
          beStrictAboutTodoAnnotatedTests="true"
          verbose="true"
+         testdox="true"
          colors="true">
     <testsuites>
         <testsuite name="default">

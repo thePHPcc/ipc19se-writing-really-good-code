@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace ClansOfCaledonia;
 
 final class Market
@@ -10,9 +11,7 @@ final class Market
 
     public function sellTo(Offer $offer): Pound
     {
-        return new Pound(
-            $offer->amount()->amount() *
-            $this->priceFor($offer->good())->amount()
-        );
+        return $this->priceFor($offer->good())
+            ->multiply($offer->amount()->amount());
     }
 }
