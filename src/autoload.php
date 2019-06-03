@@ -15,6 +15,7 @@ spl_autoload_register(
                 'clansofcaledonia\\outofrangeexception' => '/OutOfRangeException.php',
                 'clansofcaledonia\\pound' => '/Pound.php',
                 'clansofcaledonia\\pricelist' => '/PriceList.php',
+                'clansofcaledonia\\pricelistbuilder' => '/PriceListBuilder.php',
                 'clansofcaledonia\\unit' => '/Unit.php'
             );
         }
