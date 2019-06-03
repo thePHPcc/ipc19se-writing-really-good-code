@@ -3,8 +3,18 @@ namespace ClansOfCaledonia;
 
 final class Pound
 {
+    /**
+     * @var int
+     */
+    private $amount;
+
+    public function __construct(int $amount)
+    {
+        $this->amount = $amount;
+    }
+
     public function amount(): int
     {
-        return 1234;
+        return $this->amount;
     }
 }
