@@ -28,6 +28,20 @@ abstract class Good
         return new Grain();
     }
 
+    public static function byName(string $goodName)
+    {
+        switch ($goodName){
+            case Milk::name():
+                return self::milk();
+            case Wool::name():
+                return self::wool();
+            case Grain::name():
+                return self::grain();
+        }
+
+        throw new \Exception('Good Unknown');
+    }
+
     public function isMilk(): bool
     {
         return false;
