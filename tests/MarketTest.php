@@ -8,6 +8,8 @@ use PHPUnit\Framework\TestCase;
  *
  * @uses \ClansOfCaledonia\Pound
  * @uses \ClansOfCaledonia\Good
+ * @uses \ClansOfCaledonia\Offer
+ * @uses \ClansOfCaledonia\Unit
  */
 final class MarketTest extends TestCase
 {
@@ -18,10 +20,17 @@ final class MarketTest extends TestCase
         $this->assertEquals(new Pound(5), $market->priceFor(Good::milk()));
     }
 
-    public function testSellingMilkToTheMarketReducesMilkPrice(): void
+    public function testMilkCanBeSoldToTheMarket(): void
     {
         $market = new Market;
 
-        $market->sellTo(new Offer(1, Good::milk()));
+        $payment = $market->sellTo(
+            new Offer(
+                new Unit(1),
+                Good::milk()
+            )
+        );
+
+        $this->assertEquals(new Pound(5), $payment);
     }
 }

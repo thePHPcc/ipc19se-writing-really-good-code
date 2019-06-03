@@ -5,6 +5,9 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \ClansOfCaledonia\Offer
+ *
+ * @uses \ClansOfCaledonia\Good
+ * @uses \ClansOfCaledonia\Unit
  */
 final class OfferTest extends TestCase
 {
@@ -12,6 +15,6 @@ final class OfferTest extends TestCase
     {
         $offer = new Offer(new Unit(1), Good::milk());
 
-        $this->assertSame(1, $offer->amount());
+        $this->assertEquals(new Unit(1), $offer->amount());
     }
 }

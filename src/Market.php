@@ -7,4 +7,12 @@ final class Market
     {
         return new Pound(5);
     }
+
+    public function sellTo(Offer $offer): Pound
+    {
+        return new Pound(
+            $offer->amount()->amount() *
+            $this->priceFor($offer->good())->amount()
+        );
+    }
 }
