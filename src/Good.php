@@ -8,7 +8,18 @@ abstract class Good
         return new Milk;
     }
 
+    public static function wool(): self
+    {
+        return new Wool;
+    }
+
     public function isMilk(): bool
+    {
+        return false;
+    }
+
+
+    public function isWool(): bool
     {
         return false;
     }

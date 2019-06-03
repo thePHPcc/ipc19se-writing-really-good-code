@@ -14,5 +14,15 @@ final class GoodTest extends TestCase
         $milk = Good::milk();
 
         $this->assertTrue($milk->isMilk());
+        $this->assertFalse($milk->isWool());
+    }
+
+
+    public function testCanBeWool(): void
+    {
+        $wool = Good::wool();
+
+        $this->assertTrue($wool->isWool());
+        $this->assertFalse($wool->isMilk());
     }
 }
