@@ -13,9 +13,9 @@ final class Offer
      */
     private $good;
 
-    public function __construct(Quantity $unit, Good $good)
+    public function __construct(Quantity $quantity, Good $good)
     {
-        $this->amount = $unit;
+        $this->amount = $quantity;
         $this->good   = $good;
     }
 

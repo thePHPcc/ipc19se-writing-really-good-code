@@ -10,9 +10,9 @@ final class QuantityTest extends TestCase
 {
     public function testHasAmount(): void
     {
-        $unit = new Quantity(1);
+        $quantity = new Quantity(1);
 
-        $this->assertSame(1, $unit->amount());
+        $this->assertSame(1, $quantity->amount());
     }
 
     /**
