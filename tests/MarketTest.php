@@ -36,11 +36,35 @@ final class MarketTest extends TestCase
         return $market;
     }
 
+    public function testMilkCanBeBoughtFromTheMarket(): Market
+    {
+        $market = new Market;
+
+        $payment = $market->buyFrom(
+            new Offer(
+                new Unit(2),
+                Good::milk()
+            )
+        );
+
+        $this->assertEquals(new Pound(10), $payment);
+
+        return $market;
+    }
+
     /**
      * @depends testMilkCanBeSoldToTheMarket
      */
     public function testSellingMilkToTheMarketReducesMilkPrice(Market $market): void
     {
         $this->assertEquals(new Pound(4), $market->priceFor(Good::milk()));
+    }
+
+    /**
+     * @depends testMilkCanBeBoughtFromTheMarket
+     */
+    public function testBuyingMilkFromTheMarketIncreasesMilkPrice(Market $market): void
+    {
+        $this->assertEquals(new Pound(6), $market->priceFor(Good::milk()));
     }
 }
