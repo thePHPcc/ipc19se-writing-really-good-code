@@ -7,10 +7,13 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
+                'clansofcaledonia\\exception' => '/Exception.php',
                 'clansofcaledonia\\good' => '/Good.php',
                 'clansofcaledonia\\market' => '/Market.php',
                 'clansofcaledonia\\milk' => '/Milk.php',
-                'clansofcaledonia\\pound' => '/Pound.php'
+                'clansofcaledonia\\outofrangeexception' => '/OutOfRangeException.php',
+                'clansofcaledonia\\pound' => '/Pound.php',
+                'clansofcaledonia\\unit' => '/Unit.php'
             );
         }
         $cn = strtolower($class);

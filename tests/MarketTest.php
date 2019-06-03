@@ -17,4 +17,11 @@ final class MarketTest extends TestCase
 
         $this->assertEquals(new Pound(5), $market->priceFor(Good::milk()));
     }
+
+    public function testSellingMilkToTheMarketReducesMilkPrice(): void
+    {
+        $market = new Market;
+
+        $market->sellTo(new Offer(1, Good::milk()));
+    }
 }
