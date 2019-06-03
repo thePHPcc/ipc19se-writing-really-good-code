@@ -9,7 +9,7 @@ use PHPUnit\Framework\TestCase;
  * @uses \ClansOfCaledonia\Pound
  * @uses \ClansOfCaledonia\Good
  * @uses \ClansOfCaledonia\Offer
- * @uses \ClansOfCaledonia\Unit
+ * @uses \ClansOfCaledonia\Quantity
  */
 final class MarketTest extends TestCase
 {
@@ -26,7 +26,7 @@ final class MarketTest extends TestCase
 
         $payment = $market->sellTo(
             new Offer(
-                new Unit(2),
+                new Quantity(2),
                 Good::milk()
             )
         );

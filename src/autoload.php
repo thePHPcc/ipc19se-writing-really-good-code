@@ -16,7 +16,7 @@ spl_autoload_register(
                 'clansofcaledonia\\pound' => '/Pound.php',
                 'clansofcaledonia\\pricelist' => '/PriceList.php',
                 'clansofcaledonia\\pricelistbuilder' => '/PriceListBuilder.php',
-                'clansofcaledonia\\unit' => '/Unit.php'
+                'clansofcaledonia\\quantity' => '/Quantity.php'
             );
         }
         $cn = strtolower($class);

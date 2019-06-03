@@ -4,13 +4,13 @@ namespace ClansOfCaledonia;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \ClansOfCaledonia\Unit
+ * @covers \ClansOfCaledonia\Quantity
  */
-final class UnitTest extends TestCase
+final class QuantityTest extends TestCase
 {
     public function testHasAmount(): void
     {
-        $unit = new Unit(1);
+        $unit = new Quantity(1);
 
         $this->assertSame(1, $unit->amount());
     }
@@ -22,7 +22,7 @@ final class UnitTest extends TestCase
     {
         $this->expectException(OutOfRangeException::class);
 
-        new Unit($amount);
+        new Quantity($amount);
     }
 
     public function invalidAmounts(): array

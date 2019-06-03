@@ -4,7 +4,7 @@ namespace ClansOfCaledonia;
 final class Offer
 {
     /**
-     * @var Unit
+     * @var Quantity
      */
     private $amount;
 
@@ -13,13 +13,13 @@ final class Offer
      */
     private $good;
 
-    public function __construct(Unit $unit, Good $good)
+    public function __construct(Quantity $unit, Good $good)
     {
         $this->amount = $unit;
         $this->good   = $good;
     }
 
-    public function amount(): Unit
+    public function amount(): Quantity
     {
         return $this->amount;
     }

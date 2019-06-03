@@ -7,14 +7,14 @@ use PHPUnit\Framework\TestCase;
  * @covers \ClansOfCaledonia\Offer
  *
  * @uses \ClansOfCaledonia\Good
- * @uses \ClansOfCaledonia\Unit
+ * @uses \ClansOfCaledonia\Quantity
  */
 final class OfferTest extends TestCase
 {
     public function testHasAmount(): void
     {
-        $offer = new Offer(new Unit(1), Good::milk());
+        $offer = new Offer(new Quantity(1), Good::milk());
 
-        $this->assertEquals(new Unit(1), $offer->amount());
+        $this->assertEquals(new Quantity(1), $offer->amount());
     }
 }
