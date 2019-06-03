@@ -5,11 +5,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \ClansOfCaledonia\Market
+ * @covers \ClansOfCaledonia\PriceListBuilder
  *
  * @uses \ClansOfCaledonia\Pound
  * @uses \ClansOfCaledonia\Good
  * @uses \ClansOfCaledonia\Offer
  * @uses \ClansOfCaledonia\Quantity
+ * @uses \ClansOfCaledonia\PriceList
  */
 final class MarketTest extends TestCase
 {

@@ -8,6 +8,7 @@ use PHPUnit\Framework\TestCase;
  * @covers \ClansOfCaledonia\PriceList
  *
  * @uses \ClansOfCaledonia\Pound
+ * @uses \ClansOfCaledonia\Quantity
  */
 final class PriceListTest extends TestCase
 {

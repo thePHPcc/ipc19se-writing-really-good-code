@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \ClansOfCaledonia\Good
  * @covers \ClansOfCaledonia\Milk
+ * @covers \ClansOfCaledonia\Wool
  */
 final class GoodTest extends TestCase
 {

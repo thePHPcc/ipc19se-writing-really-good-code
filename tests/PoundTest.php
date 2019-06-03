@@ -5,6 +5,8 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \ClansOfCaledonia\Pound
+ *
+ * @uses \ClansOfCaledonia\Quantity
  */
 final class PoundTest extends TestCase
 {
