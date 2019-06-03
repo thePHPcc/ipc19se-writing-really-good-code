@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+
 namespace ClansOfCaledonia;
 
 final class PriceListBuilder
@@ -6,6 +7,7 @@ final class PriceListBuilder
     public function milkPrices(): PriceList
     {
         return PriceList::fromList(
+            $initPosition = 3,
             new Pound(3),
             new Pound(4),
             new Pound(5),
