@@ -33,11 +33,11 @@ final class PriceListTest extends TestCase
     {
         $prices = $this->priceList();
         $this->assertEquals(new Pound(4), $prices->current());
-        $prices->increaseStock(new Unit(1));
+        $prices->increaseStock(new Quantity(1));
         $this->assertEquals(new Pound(3), $prices->current());
-        $prices->increaseStock(new Unit(2));
+        $prices->increaseStock(new Quantity(2));
         $this->assertEquals(new Pound(1), $prices->current());
-        $prices->increaseStock(new Unit(1));
+        $prices->increaseStock(new Quantity(1));
         $this->assertEquals(new Pound(1), $prices->current());
     }
 
@@ -45,15 +45,15 @@ final class PriceListTest extends TestCase
     {
         $prices = $this->priceList();
         $this->assertEquals(new Pound(4), $prices->current());
-        $prices->decreaseStock(new Unit(1));
+        $prices->decreaseStock(new Quantity(1));
         $this->assertEquals(new Pound(5), $prices->current());
-        $prices->decreaseStock(new Unit(2));
+        $prices->decreaseStock(new Quantity(2));
         $this->assertEquals(new Pound(7), $prices->current());
-        $prices->decreaseStock(new Unit(1));
+        $prices->decreaseStock(new Quantity(1));
         $this->assertEquals(new Pound(8), $prices->current());
-        $prices->decreaseStock(new Unit(2));
+        $prices->decreaseStock(new Quantity(2));
         $this->assertEquals(new Pound(10), $prices->current());
-        $prices->decreaseStock(new Unit(1));
+        $prices->decreaseStock(new Quantity(1));
         $this->assertEquals(new Pound(10), $prices->current());
     }
 

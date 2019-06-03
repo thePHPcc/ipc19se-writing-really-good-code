@@ -32,14 +32,14 @@ final class PriceList
     }
 
 
-    public function increaseStock(Unit $unit): void
+    public function increaseStock(Quantity $quantity): void
     {
-        $this->position = max($this->position - $unit->amount(), 0);
+        $this->position = max($this->position - $quantity->amount(), 0);
     }
 
 
-    public function decreaseStock(Unit $unit): void
+    public function decreaseStock(Quantity $quantity): void
     {
-        $this->position = min($this->position + $unit->amount(), count($this->prices)-1);
+        $this->position = min($this->position + $quantity->amount(), count($this->prices)-1);
     }
 }

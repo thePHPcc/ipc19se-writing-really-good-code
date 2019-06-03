@@ -21,7 +21,7 @@ final class PoundTest extends TestCase
     /**
      * @dataProvider multiplyDataProvider
      */
-    public function testPoundCanMultiply(int $amount, Unit $factor, int $expected)
+    public function testPoundCanMultiply(int $amount, Quantity $factor, int $expected)
     {
         $p = new Pound($amount);
 
@@ -32,9 +32,9 @@ final class PoundTest extends TestCase
     public function multiplyDataProvider()
     {
         return [
-            [ 5, new Unit(2), 10],
-            [ 1, new Unit(100), 100],
-            [ -3, new Unit(4), -12],
+            [ 5, new Quantity(2), 10],
+            [ 1, new Quantity(100), 100],
+            [ -3, new Quantity(4), -12],
         ];
     }
 }
