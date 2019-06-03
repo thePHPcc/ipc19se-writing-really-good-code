@@ -3,7 +3,7 @@ namespace ClansOfCaledonia;
 
 final class PriceListBuilder
 {
-    public function milkPrices(): PriceList
+    public static function milkPrices(): PriceList
     {
         return PriceList::fromList(
             new Pound(3),

@@ -3,16 +3,24 @@ namespace ClansOfCaledonia;
 
 final class Market
 {
+    /** @var PriceList[] */
+    private $priceLists = [];
+
+    public function __construct()
+    {
+        $this->priceLists['milk'] = PriceListBuilder::milkPrices();
+    }
+
+
     public function priceFor(Good $good): Pound
     {
-        return new Pound(5);
+        return $this->priceLists['milk']->current();
     }
 
     public function sellTo(Offer $offer): Pound
     {
-        return new Pound(
-            $offer->amount()->amount() *
-            $this->priceFor($offer->good())->amount()
-        );
+        $profit = $this->priceLists['milk']->current()->multiply($offer->amount());
+        $this->priceLists['milk']->increaseStock($offer->amount());
+        return $profit;
     }
 }
