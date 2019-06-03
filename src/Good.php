@@ -2,6 +2,8 @@
 
 namespace ClansOfCaledonia;
 
+use ClansOfCaledonia\Good\Milk;
+
 abstract class Good
 {
     abstract static function name(): string;

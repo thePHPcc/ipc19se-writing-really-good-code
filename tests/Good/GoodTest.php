@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
-namespace ClansOfCaledonia;
+
+namespace ClansOfCaledonia\Good;
 
 use PHPUnit\Framework\TestCase;
 

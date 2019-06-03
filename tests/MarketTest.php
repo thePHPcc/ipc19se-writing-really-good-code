@@ -2,6 +2,7 @@
 
 namespace ClansOfCaledonia;
 
+use ClansOfCaledonia\Good\Milk;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -29,7 +30,7 @@ final class MarketTest extends TestCase
                     new Pound(30),
                     new Pound(40),
                     new Pound(50),
-                    )
+                )
             );
     }
 
